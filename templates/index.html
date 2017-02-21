@@ -5,7 +5,24 @@
 
 <body>
 <h1>New Mexico lawmaker financial disclosures</h1>
+<table border=1 cellpadding=7>
+    <tr>
+        <th>Name</th>
+        <th>Chamber</th>
+        <th>District Number</th>
+    </tr>
+    {% for obj in object_list %}
 
+    <tr>
+
+
+       <td>{{ obj.Name}}</td>
+       <td>{{ obj.Chamber }}</td>
+       <td>{{ obj.District }}</td>
+    </tr>
+    {% endfor %}
+
+</table> 
 </body>
 
 </html>
