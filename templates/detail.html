@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head></head>
+   <body>
+
+    <h1>{{ object.Name }}</h1>
+    <p>{{ object.Name}}, {{object.Party}}, {{object.Chamber}} District {{object.District }}, of {{object.city }}, representing {{object.counties}} County/counties. In the {{object.Chamber}} since {{ object.Year }}. <p> 
+    <p>Employment: {{object.Title }} at {{ object.Employer }}, {{ object.Type }}</p>
+{% if object.Spouse %}
+    <p>Spouse: {{ object.Spouse|safe }}</p>
+{% endif %}
+{% if object.Spouse_title %}
+    <p>Spouse's employment: {{object.Spouse_title|safe }} at {{ object.Spouse_employer| safe }}  {{Spouse_type|safe }} </p>
+
+{% endif %}
+    <p>Income sources: {{object.income1 }}, {% if object.income2 %} {{ object.income2|safe }}, {% endif %} {% if object.income3 %}{{ object.income3|safe }}, {% endif %} {% if object.income4 %} {{ object.income4|safe }} {% endif %}</p>
+
+{% if object.special1 %}
+    <p>Professional specialties:  {{object.special1|safe}}, {% if object.special2 %} {{object.special2|safe }}, {% endif %}{% if object.spcial3 %} {{object.special3|safe}} {% endif %}</p>
+{% endif %}
+
+{% if object.lobby_client %}
+    <p>Lobbyist info: {{ object.lobby_client|safe}} </p>
+{% endif %}
+
+{% if object.Real_estate1 %}
+     <p>Real estate: {{ object.Real_estate1|safe }}; {% if object.Real_estate2 %} {{ object.Real_estate2|safe }};{% endif %} {% if object.Real_estate3 %} {{ object.Real_estate3|safe }};{% endif %} {% if object.Real_estate4 %} {{ object.Real_estate4|safe }}{% endif %}</p>
+{% endif %}
+
+{% if object.Biz_interest1 %}
+    <p>Business interests of $10,000 or more: {{ object.Biz_interest1|safe }}; {% if object.Biz_interes2 %} {{ object.Biz_interes2|safe }}; {% endif %} {% if object.Biz_interest3 %} {{ object.Biz_interest3|safe }} {% endif %}</p>
+{% endif %}
+
+{% if object.board1 %}
+     <p>Boards served on: {{ object.board1|safe }}; {% if object.board2 %} {{ object.board2|safe }}; {% endif %} {% if object.board3 %} {{ object.board3|safe }} {% endif %}</p>
+{% endif %}
+
+{% if object.license1 %}
+     <p>Licenses held: {{ object.license1|safe }}; {% if object.license2 %} {{ object.license2|safe }}; {% endif %} {% if object.license3 %} {{ object.license3|safe }} {% endif %}</p>
+{% endif %}
+
+{% if object.agency_biz1 %}
+     <p>Contracts with state government of $5,000 or more: {{ object.agency_biz1|safe }}; {% if object. agency_biz2 %} {{ object.agency_biz2|safe }}; {% endif %} {% if object.agency_biz3 %} {{ object.agency_biz3|safe}} {% endif %}</p>
+
+{% endif %}
+
+{% if object.agency_rep1 %}
+     <p>State agencies in which clients were represented before or assisted with: {{ object.agency_rep1|safe }}; {% if object.agency_rep2 %} {{ object.agency_rep2|safe}} {% endif %} {% if object.agency_rep3 %} {{ object.agency_rep3|safe }} {% endif %}</p>
+{% endif %}
+
+{% if object.other %}
+     <p>Other information: {{ object.other|safe }}</p>
+{% endif %}
+
+
+    <h3>Contact</h3>
+    <p>Capitol phone: 505-{{ object.capital_phone }}</p>
+    <p>Work phone: {{ object.office_phone }}</p>
+    <p>Home phone: {{ object.home_phone}}</p>
+    <p>Email: {{object.email }}</p>
+
+
+   </body>
+
+</html
