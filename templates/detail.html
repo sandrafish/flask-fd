@@ -1,8 +1,17 @@
 <!doctype html>
 <html lang="en">
 
-<head></head>
+<head>
+<meta name="veiwport" content="width=device-width, initial-scare=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
    <body>
+    <nav>
+    <a href="http://nmindepth.com/">
+      <img src="{{ url_for('static', filename='NMID-logo-square.jpg') }}"></a>
+          <h1>2017 New Mexico Legislature financial disclosure</h1>
+
+  </nav>
 
     <h1>{{ object.Name }}</h1>
     <p>{{ object.Name}}, {{object.Party}}, {{object.Chamber}} District {{object.District }}, of {{object.city }}, representing {{object.counties}} County/counties. In the {{object.Chamber}} since {{ object.Year }}. <p> 
@@ -49,8 +58,8 @@
      <p>State agencies in which clients were represented before or assisted with: {{ object.agency_rep1|safe }}; {% if object.agency_rep2 %} {{ object.agency_rep2|safe}} {% endif %} {% if object.agency_rep3 %} {{ object.agency_rep3|safe }} {% endif %}</p>
 {% endif %}
 
-{% if object.other %}
-     <p>Other information: {{ object.other|safe }}</p>
+{% if object.Other %}
+     <p>Other information: {{ object.Other|safe }}</p>
 {% endif %}
 
 

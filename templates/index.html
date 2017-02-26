@@ -1,15 +1,30 @@
+
 <!doctype html>
 <html lang="en">
 
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+  <meta name="veiwport" content="width=device-width, initial-scare=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+  
+<title>
+ 
+</title>
+
 </head>
 
-<body>
 
+<body>
+  <nav>
+    <a href="http://nmindepth.com/">
+      <img src="{{ url_for('static', filename='NMID-logo-square.jpg') }}"></a>
+          <h1>2017 New Mexico Legislature financial disclosure</h1>
+
+  </nav>
+  
   <div id="map" style="width:100%; height:350px;"></div> 
-<h1>New Mexico lawmaker financial disclosures</h1>
+
 <table border=1 cellpadding=7>
     <tr>
         <th>Name</th>
@@ -56,7 +71,9 @@
                 {% endfor %}
               ]
             };
+            
             var dataLayer = L.geoJson(data,  {
+                
                 onEachFeature: function(feature, layer) {
                     layer.bindPopup('<a href=" ' + feature.properties.id + '/">' + feature.properties.Name + '</a>' + '<br>' + feature.properties.Chamber + '<br>' +feature.properties.District);
                 }
