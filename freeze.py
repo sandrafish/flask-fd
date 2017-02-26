@@ -2,7 +2,7 @@ from flask_frozen import Freezer
 from app import app, get_csv
 freezer = Freezer(app)
 
-app.config['FREEZER_BASE_URL']=True
+app.config['FREEZER_RELATIVE_URLS']=True
 
 @freezer.register_generator
 def detail():
