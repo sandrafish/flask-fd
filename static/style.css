@@ -19,6 +19,12 @@ nav h3 {
     position: relative;
     color: #1EA3A8;
 }
+
+nav h4 {
+    position: relative;
+    color: #1EA3A8;
+}
+
 header {
     margin: 25px 10px 15px 10px;
     font-family: Times, Times New Roman, serif;
