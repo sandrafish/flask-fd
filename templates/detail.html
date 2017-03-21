@@ -9,11 +9,11 @@
     <nav>
     <a href="http://nmindepth.com/">
       <img src="{{ url_for('static', filename='NMID-logo-square.jpg') }}"></a>
-          <h1>2017 New Mexico Legislature financial disclosure</h1>
+          <h3>2017 New Mexico Legislature financial disclosure</h3>
 
   </nav>
 
-    <h1>{{ object.Name }}</h1>
+    <h3>{{ object.Name }}</h3>
     <p>{{ object.Name}}, {{object.Party}}, {{object.Chamber}} District {{object.District }}, of {{object.city }}, representing {{object.counties}} County/counties. In the {{object.Chamber}} since {{ object.Year }}. <p> 
     <p>Employment: {{object.Title }} at {{ object.Employer }}, {{ object.Type }}</p>
 {% if object.Spouse %}
@@ -69,6 +69,7 @@
     <p>Home phone: {{ object.home_phone}}</p>
     <p>Email: <a href="mailto:{{object.email}}">{{object.email }}</a></p>
 
+<h3><a href="https://sandrafish.github.io/flask-fd/build/index.html">Return to list</a></h3>
 
    </body>
 
